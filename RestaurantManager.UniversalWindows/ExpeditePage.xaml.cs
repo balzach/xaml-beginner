@@ -26,5 +26,11 @@ namespace RestaurantManager
         {
             this.InitializeComponent();
         }
+
+        void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Frame != null && this.Frame.CanGoBack)
+                this.Frame.GoBack();
+        }
     }
 }
