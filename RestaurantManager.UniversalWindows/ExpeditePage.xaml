@@ -5,7 +5,11 @@
     xmlns:local="using:RestaurantManager.UniversalWindows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:RestaurantManager.Models"
     mc:Ignorable="d">
+    <Page.DataContext>
+        <models:DataManager />
+    </Page.DataContext>
     <Page.TopAppBar>
         <AppBar>
             <AppBarButton Icon="Home" Label="Home" Click="BackButton_Click" />            
@@ -17,6 +21,7 @@
             <RowDefinition Height="0.1*" />
         </Grid.RowDefinitions>
         <Button Content="Clear All Orders" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <GridView Grid.Row="0" />
+        <GridView Grid.Row="0" ItemsSource="{Binding OrderItems}">
+        </GridView>
     </Grid>
 </Page>
